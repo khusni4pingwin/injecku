@@ -13,18 +13,6 @@ proxies:
     grpc-opts:
       grpc-service-name: vpnNEO
     udp: true
-  - name: fghfghfghj
-    server: zendesk1.appsflyer.com
-    port: 443
-    type: trojan
-    password: 98e772d0-e69d-4878-b2d4-ec2fd2d15819
-    skip-cert-verify: true
-    sni: id1grpc.sshocean.net
-    network: grpc
-    grpc-opts:
-      grpc-service-name: grpc
-    udp: true
-    
   - name: linkgo2
     server: zendesk1.appsflyer.com 
     port: 443
