@@ -13,7 +13,6 @@ proxies:
     grpc-opts:
       grpc-service-name: vpnNEO
     udp: true
-    
   - name: linkgo2
     server: zendesk1.appsflyer.com 
     port: 443
