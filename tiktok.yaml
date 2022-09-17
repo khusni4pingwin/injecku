@@ -1,4 +1,18 @@
 proxies:
+  - name: biznet-a
+    server: zendesk1.appsflyer.com
+    port: 443
+    type: vmess
+    uuid: 22e1355f-7545-4e9f-b5fc-103d59666a6f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: grpc-biznet-a.nextvpn.cc
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vpnNEO
+    udp: true
   - name: fghfghfghj
     server: zendesk1.appsflyer.com
     port: 443
@@ -25,18 +39,4 @@ proxies:
     skip-cert-verify: true
     grpc-opts:
       grpc-service-name: v2ray-vmess-grpc
-  - name: biznet-a
-    server: zendesk1.appsflyer.com
-    port: 443
-    type: vmess
-    uuid: 22e1355f-7545-4e9f-b5fc-103d59666a6f
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: grpc-biznet-a.nextvpn.cc
-    network: grpc
-    grpc-opts:
-      grpc-service-name: vpnNEO
-    udp: true
 
