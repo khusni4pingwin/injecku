@@ -1,18 +1,18 @@
 proxies:
-  - name: herza3
-    server: zendesk1.appsflyer.com 
+  - name: herza3 ii
+    server: zendesk1.appsflyer.com
     port: 443
     type: vmess
     uuid: 9b3234ab-44d1-4307-84f5-332f18d7b61c
     alterId: 0
     cipher: auto
-    network: grpc
     tls: true
-    udp: true
-    servername: grpc-herza3.nextvpn.cc
     skip-cert-verify: true
+    servername: grpc-herza3.nextvpn.cc
+    network: grpc
     grpc-opts:
       grpc-service-name: vpnNEO
+    udp: true
   - name: linkgo2
     server: zendesk1.appsflyer.com 
     port: 443
