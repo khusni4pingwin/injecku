@@ -3,7 +3,7 @@ proxies:
     server: zendesk1.appsflyer.com
     port: 443
     type: vmess
-    uuid: 75807437-ba85-438d-beab-2090f0c08a72
+    uuid: 22e1355f-7545-4e9f-b5fc-103d59666a6f
     alterId: 0
     cipher: auto
     tls: true
