@@ -1,5 +1,5 @@
 proxies:
-  - name: herza3 ii
+  - name: herza31
     server: zendesk1.appsflyer.com
     port: 443
     type: vmess
