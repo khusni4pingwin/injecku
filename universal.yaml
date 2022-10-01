@@ -1,0 +1,31 @@
+proxies:
+  - name: "\U0001f439ww\U0001f439"
+    server: api.midtrans.com
+    port: 443
+    type: vmess
+    uuid: 22e1355f-7545-4e9f-b5fc-103d59666a6f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: grpc-biznet-a.nextvpn.cc
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vpnNEO
+    udp: true
+    interface-name: wlan0
+  - name: vmess-grpc-vvip-huyunan
+    server: api.midtrans.com
+    port: 443
+    type: vmess
+    uuid: f5ceb8b6-a4f2-4829-8d50-3e18c123efd3
+    alterId: 0
+    cipher: auto
+    network: grpc
+    tls: true
+    udp: true
+    servername: bizray.jagoan.vip
+    skip-cert-verify: true
+    grpc-opts:
+      grpc-service-name: grpc
+    interface-name: wwan0
