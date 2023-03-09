@@ -46,7 +46,7 @@ proxies:
     udp: true
 #22-03-2023
   - name: liveon
-    server: 104.26.7.171
+    server: 104.22.24.131
     port: 443
     type: trojan
     password: e505b998-4594-4156-8d24-ded7e38641de
@@ -58,7 +58,7 @@ proxies:
     udp: true
 #28.03.2023
   - name: rudi
-    server: 104.26.7.171
+    server: 104.22.24.131
     port: 443
     type: trojan
     password: eb5d0220-050a-4fcf-8ed5-2922d488a2c1
@@ -69,7 +69,7 @@ proxies:
       grpc-service-name: xray-trojan-grpc
     udp: true
   - name: kancil
-    server: 104.26.7.171
+    server: 104.22.24.131
     port: 443
     type: trojan
     password: eb5d0220-050a-4fcf-8ed5-2922d488a2c1
@@ -80,7 +80,7 @@ proxies:
       grpc-service-name: xray-trojan-grpc
     udp: true
   - name: sulton
-    server: 104.26.7.171
+    server: 104.22.24.131
     port: 443
     type: trojan
     password: eb5d0220-050a-4fcf-8ed5-2922d488a2c1
@@ -92,7 +92,7 @@ proxies:
     udp: true
 #22.03.2023
   - name: sekhu
-    server: 104.26.7.171
+    server: 104.22.24.131
     port: 443
     type: trojan
     password: e505b998-4594-4156-8d24-ded7e38641de
@@ -103,7 +103,7 @@ proxies:
       grpc-service-name: xray-trojan-grpc
     udp: true
   - name: droi
-    server: 104.26.7.171
+    server: 104.22.24.131
     port: 443
     type: trojan
     password: e505b998-4594-4156-8d24-ded7e38641de
@@ -124,6 +124,5 @@ proxy-groups:
       - rudi
       - sulton
       - kancil
-      - DIRECT
 rules:
   - MATCH,khusni
