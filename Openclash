@@ -115,7 +115,7 @@ proxies:
     udp: true
 proxy-groups:
   - name: khusni
-    type: url-test
+    type: fallback
     proxies:
       - live
       - liveon
