@@ -1,36 +1,21 @@
-port: 7890
-socks-port: 7891
-redir-port: 7892
-mixed-port: 7893
-tproxy-port: 7895
-ipv6: false
-mode: rule
-log-level: silent
-allow-lan: true
-external-controller: 0.0.0.0:9090
-secret: ""
+tproxy-port: 7893
 bind-address: "*"
+mode: rule
+allow-lan: true
+log-level: silent
+external-controller: 0.0.0.0:9090
+external-ui: yacd-gh-pages
 unified-delay: true
-profile:
-  store-selected: true
+ipv6: false
 dns:
   enable: true
   ipv6: false
-  enhanced-mode: redir-host
-  listen: 0.0.0.0:7874
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.0/8
+  use-hosts: true
   nameserver:
-    - 8.8.8.8
-    - 1.0.0.1
-    - https://dns.google/dns-query
-  fallback:
-    - 1.1.1.1
-    - 8.8.4.4
     - https://cloudflare-dns.com/dns-query
-    - 112.215.203.254
-  default-nameserver:
-    - 8.8.8.8
-    - 1.1.1.1
-    - 112.215.203.254
 proxies:
 #26-03-2023
   - name: live
@@ -115,7 +100,15 @@ proxies:
     udp: true
 proxy-groups:
   - name: khusni
-    type: fallback
+    type: select
+    proxies:
+      - BEST-PING
+      - DIRECT
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
     proxies:
       - live
       - liveon
@@ -124,5 +117,13 @@ proxy-groups:
       - rudi
       - sulton
       - kancil
+rule-providers:
+  clash:
+    type: http
+    behavior: domain
+    url: https://howdy.id/download/rules/clash.txt
+    path: ./providers/rule-provider_clash.yaml
+    interval: 86400
 rules:
+  - RULE-SET,clash,REJECT
   - MATCH,khusni
