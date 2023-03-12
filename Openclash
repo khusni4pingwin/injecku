@@ -16,88 +16,17 @@ dns:
   use-hosts: true
   nameserver:
     - https://cloudflare-dns.com/dns-query
-proxies:
-#26-03-2023
-  - name: live
-    server: 104.26.7.171
-    port: 443
-    type: trojan
-    password: eb5d0220-050a-4fcf-8ed5-2922d488a2c1
-    skip-cert-verify: true
-    sni: sg1-prem.kitu.xyz
-    network: grpc
-    grpc-opts:
-      grpc-service-name: xray-trojan-grpc
-    udp: true
-#22-03-2023
-  - name: liveon
-    server: 104.22.24.131
-    port: 443
-    type: trojan
-    password: e505b998-4594-4156-8d24-ded7e38641de
-    skip-cert-verify: true
-    sni: sg1-prem.kitu.xyz
-    network: grpc
-    grpc-opts:
-      grpc-service-name: xray-trojan-grpc
-    udp: true
-#28.03.2023
-  - name: rudi
-    server: 104.22.24.131
-    port: 443
-    type: trojan
-    password: eb5d0220-050a-4fcf-8ed5-2922d488a2c1
-    skip-cert-verify: true
-    sni: sg1-prem.kitu.xyz
-    network: grpc
-    grpc-opts:
-      grpc-service-name: xray-trojan-grpc
-    udp: true
-  - name: kancil
-    server: 104.22.24.131
-    port: 443
-    type: trojan
-    password: eb5d0220-050a-4fcf-8ed5-2922d488a2c1
-    skip-cert-verify: true
-    sni: sg1-prem.kitu.xyz
-    network: grpc
-    grpc-opts:
-      grpc-service-name: xray-trojan-grpc
-    udp: true
-  - name: sulton
-    server: 104.22.24.131
-    port: 443
-    type: trojan
-    password: eb5d0220-050a-4fcf-8ed5-2922d488a2c1
-    skip-cert-verify: true
-    sni: sg1-prem.kitu.xyz
-    network: grpc
-    grpc-opts:
-      grpc-service-name: xray-trojan-grpc
-    udp: true
-#22.03.2023
-  - name: sekhu
-    server: 104.22.24.131
-    port: 443
-    type: trojan
-    password: e505b998-4594-4156-8d24-ded7e38641de
-    skip-cert-verify: true
-    sni: sg1-prem.kitu.xyz
-    network: grpc
-    grpc-opts:
-      grpc-service-name: xray-trojan-grpc
-    udp: true
-  - name: droi
-    server: 104.22.24.131
-    port: 443
-    type: trojan
-    password: e505b998-4594-4156-8d24-ded7e38641de
-    skip-cert-verify: true
-    sni: sg1-prem.kitu.xyz
-    network: grpc
-    grpc-opts:
-      grpc-service-name: xray-trojan-grpc
-    udp: true
+proxy-providers:
+  akun:
+    type: http
+    path: "./proxy_provider/vpn.yaml"
+    filter: live
+    url: https://raw.githubusercontent.com/khusni4pingwin/injecku/main/Akunku
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://hi.bonds.id/ping
+      interval: 300
 proxy-groups:
   - name: khusni
     type: select
@@ -110,14 +39,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     filter: live
-    proxies:
-      - live
-      - liveon
-      - droi
-      - sekhu
-      - rudi
-      - sulton
-      - kancil
+    use:
+      - akun
 rule-providers:
   clash:
     type: http
