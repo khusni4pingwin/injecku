@@ -1,0 +1,59 @@
+tproxy-port: 7893
+bind-address: "*"
+mode: rule
+allow-lan: true
+log-level: silent
+external-controller: 0.0.0.0:9090
+external-ui: yacd-gh-pages
+unified-delay: true
+ipv6: false
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.0/8
+  use-hosts: true
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+proxy-providers:
+  akun:
+    type: http
+    path: "./proxy_provider/vpn.yaml"
+    filter: akrab
+    url: https://raw.githubusercontent.com/khusni4pingwin/injecku/main/Akunku
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://hi.bonds.id/ping
+      interval: 300
+proxy-groups:
+  - name: khusni
+    type: select
+    proxies:
+      - BEST-PING
+      - backup
+  - name: backup
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    use:
+      - akun
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    use:
+      - akun
+rule-providers:
+  clash:
+    type: http
+    behavior: domain
+    url: https://howdy.id/download/rules/clash.txt
+    path: ./providers/rule-provider_clash.yaml
+    interval: 86400
+rules:
+  - RULE-SET,clash,REJECT
+  - MATCH,khusni
