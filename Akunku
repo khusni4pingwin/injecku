@@ -12,7 +12,7 @@ proxies:
       grpc-service-name: xray-trojan-grpc
     udp: true
 #22-03-2023
-  - name: tsel ilped
+  - name: tsel ilped2
     server: 104.22.24.131
     port: 443
     type: trojan
