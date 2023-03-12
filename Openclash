@@ -32,7 +32,24 @@ proxy-groups:
     type: select
     proxies:
       - BEST-PING
-      - DIRECT
+      - backup
+      - gabungan
+  - name: backup
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    filter: live
+    use:
+      - akun
+  - name: gabungan
+    type: loadbalance
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    filter: live
+    use:
+      - akun
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
