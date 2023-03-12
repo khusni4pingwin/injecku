@@ -43,7 +43,7 @@ proxy-groups:
     use:
       - akun
   - name: gabungan
-    type: loadbalance
+    type: load-balance
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
