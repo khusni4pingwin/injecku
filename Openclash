@@ -33,17 +33,8 @@ proxy-groups:
     proxies:
       - BEST-PING
       - backup
-      - gabungan
   - name: backup
     type: fallback
-    url: http://hi.bonds.id/ping
-    interval: 300
-    tolerance: 50
-    filter: live
-    use:
-      - akun
-  - name: gabungan
-    type: load-balance
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
