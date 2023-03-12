@@ -109,6 +109,7 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
+    filter: live
     proxies:
       - live
       - liveon
