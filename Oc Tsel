@@ -38,7 +38,6 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
-    filter: live
     use:
       - akun
   - name: BEST-PING
@@ -46,7 +45,6 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
-    filter: live
     use:
       - akun
 rule-providers:
