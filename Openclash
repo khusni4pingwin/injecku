@@ -20,7 +20,7 @@ proxy-providers:
   akun:
     type: http
     path: "./proxy_provider/vpn.yaml"
-    filter: live
+    filter: tsel
     url: https://raw.githubusercontent.com/khusni4pingwin/injecku/main/Akunku
     interval: 21600
     health-check:
