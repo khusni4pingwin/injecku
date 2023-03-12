@@ -1,6 +1,6 @@
 proxies:
 #26-03-2023
-  - name: live
+  - name: tsel ilped
     server: 104.26.7.171
     port: 443
     type: trojan
@@ -12,7 +12,7 @@ proxies:
       grpc-service-name: xray-trojan-grpc
     udp: true
 #22-03-2023
-  - name: liveon
+  - name: tsel ilped
     server: 104.22.24.131
     port: 443
     type: trojan
