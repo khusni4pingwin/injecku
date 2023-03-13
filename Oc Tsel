@@ -1,21 +1,3 @@
-tproxy-port: 7893
-bind-address: "*"
-mode: rule
-allow-lan: true
-log-level: silent
-external-controller: 0.0.0.0:9090
-external-ui: yacd-gh-pages
-unified-delay: true
-ipv6: false
-dns:
-  enable: true
-  ipv6: false
-  listen: 0.0.0.0:1053
-  enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.0/8
-  use-hosts: true
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
 proxy-providers:
   akun:
     type: http
