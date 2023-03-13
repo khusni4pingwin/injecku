@@ -1,6 +1,6 @@
 proxies:
   - name: tsel go
-    server: 104.22.24.131
+    server: 104.26.6.171
     port: 443
     type: trojan
     password: trial-vshdhdhd
