@@ -1,6 +1,6 @@
 proxies:
   - name: tsel go
-    server: 104.26.6.171
+    server: 104.26.7.171
     port: 443
     type: trojan
     password: trial-vshdhdhd
@@ -26,7 +26,7 @@ proxies:
     udp: true
 #22-03-2023
   - name: tsel ilped2
-    server: 104.22.24.131
+    server: 104.26.7.171
     port: 443
     type: trojan
     password: e505b998-4594-4156-8d24-ded7e38641de
