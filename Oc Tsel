@@ -53,7 +53,7 @@ rule-providers:
     behavior: domain
     url: https://howdy.id/download/rules/clash.txt
     path: ./providers/rule-provider_clash.yaml
-    interval: 300
+    interval: 21600
 rules:
   - RULE-SET,clash,REJECT
   - MATCH,khusni
