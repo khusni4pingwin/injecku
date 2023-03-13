@@ -1,4 +1,17 @@
 proxies:
+  - name: tsel go
+    server: 104.22.24.131
+    port: 443
+    type: trojan
+    password: trial-vshdhdhd
+    skip-cert-verify: true
+    sni: trojan-go
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: id2-prem.kitu.xyz
+    udp: true
 #26-03-2023
   - name: tsel ilped
     server: 104.26.7.171
