@@ -20,7 +20,7 @@ proxy-providers:
   akun:
     type: http
     path: "./proxy_provider/vpn.yaml"
-    filter: tsel
+    filter: 
     url: https://raw.githubusercontent.com/khusni4pingwin/injecku/main/Akunku
     interval: 21600
     health-check:
@@ -31,8 +31,8 @@ proxy-groups:
   - name: khusni
     type: select
     proxies:
-      - BEST-PING
       - backup
+      - BEST-PING
   - name: backup
     type: fallback
     url: http://hi.bonds.id/ping
