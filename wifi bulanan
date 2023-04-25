@@ -1,0 +1,98 @@
+proxies:
+- name: xl id2
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: 8d5208b0-6d5f-4012-9602-95603d115985
+  skip-cert-verify: true
+  sni: id2-prem.kitu.xyz
+  network: grpc
+  grpc-opts:
+    grpc-service-name: xray-trojan-grpc
+  udp: true
+- xl id22
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: 8d5208b0-6d5f-4012-9602-95603d115985
+  skip-cert-verify: true
+  sni: id2-prem.kitu.xyz
+  network: grpc
+  grpc-opts:
+    grpc-service-name: xray-trojan-grpc
+  udp: true
+- name: xl sg1
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: 6ca34d02-4c15-42ad-bda8-988e4741db26
+  skip-cert-verify: true
+  sni: sg1-prem.kitu.xyz
+  network: grpc
+  grpc-opts:
+    grpc-service-name: xray-trojan-grpc
+  udp: true
+- name: mas rudi
+  server: 104.17.3.81
+  type: vmess
+  port: 443
+  uuid: d7eec412-66e1-44b0-aa3f-0f9e86617bc4
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: sg1-prem.kitu.xyz
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: sg1-prem.kitu.xyz
+  udp: true
+- name: mas sulton
+  server: 104.18.1.196
+  type: vmess
+  port: 443
+  uuid: d7eec412-66e1-44b0-aa3f-0f9e86617bc4
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: sg1-prem.kitu.xyz
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: sg1-prem.kitu.xyz
+  udp: true
+- name: mas sekhu
+  server: 104.18.1.196
+  type: vmess
+  port: 443
+  uuid: d7eec412-66e1-44b0-aa3f-0f9e86617bc4
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: sg1-prem.kitu.xyz
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: sg1-prem.kitu.xyz
+  udp: true
+- name: kaneki
+  server: 104.18.1.196
+  type: vmess
+  port: 443
+  uuid: d7eec412-66e1-44b0-aa3f-0f9e86617bc4
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: sg1-prem.kitu.xyz
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: sg1-prem.kitu.xyz
+  udp: true
